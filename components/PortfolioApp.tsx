@@ -12,6 +12,7 @@ import Particles from "@/components/Particles";
 import { SkillOrb } from "@/components/SkillOrb";
 import { ProjectCard } from "@/components/ProjectCard";
 import { FakeTerminal } from "@/components/FakeTerminal";
+import { SystemAvatar } from "@/components/SystemAvatar";
 
 const roles = ["Python Developer", "AIML Engineer", "Student Builder", "UI Experimenter"];
 
@@ -324,19 +325,7 @@ function About() {
     >
       <div className="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
         <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }} className="flex justify-center">
-          <div className="relative flex h-[22rem] w-[22rem] items-center justify-center rounded-full border border-white/15 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.14),rgba(255,255,255,0.02)_40%,rgba(0,0,0,0.2)_70%)] shadow-[0_0_60px_rgba(255,255,255,0.16)]">
-            <div className="absolute inset-4 rounded-full border border-white/10" />
-            <div className="absolute inset-10 rounded-full border border-white/10" />
-            <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_35%_30%,rgba(255,255,255,0.18),transparent_20%),radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.1),transparent_18%)]" />
-            <div className="relative z-10 flex h-52 w-52 items-center justify-center rounded-full border border-white/10 bg-[#0a0a0f]/80 backdrop-blur-md">
-              <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.28),rgba(0,0,0,0)_58%)] opacity-70 blur-xl" />
-              <div className="relative z-10 text-center">
-                <p className="font-heading text-5xl text-text">A.T.</p>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.4em] text-muted">Stylized Avatar</p>
-                <p className="mt-3 px-8 text-xs leading-6 text-muted">TODO: replace with actual photo if you add /assets/avatar.png</p>
-              </div>
-            </div>
-          </div>
+          <SystemAvatar />
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }} className="space-y-8">
