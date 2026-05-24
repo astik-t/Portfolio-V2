@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowRight, BadgeCheck, Binary, Bot, Check, ChevronDown, Code2, Copy, Cpu, Download, Gamepad2, Github, Layers, Linkedin, Mail, Menu, Network, Palette, Phone, Send, Sparkles, TerminalSquare, Wrench, X, Youtube } from "lucide-react";
+import { ArrowRight, BadgeCheck, Binary, Bot, Check, ChevronDown, Clock, Code2, Copy, Cpu, Download, Gamepad2, Github, Layers, Linkedin, Mail, MapPin, Menu, Network, Palette, Phone, Send, Sparkles, TerminalSquare, Wrench, X, Youtube, Zap } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLenisScroll } from "@/hooks/useLenisScroll";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
@@ -14,14 +14,14 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { FakeTerminal } from "@/components/FakeTerminal";
 import { SystemAvatar } from "@/components/SystemAvatar";
 
-const roles = ["Python Developer", "AIML Engineer", "Student Builder", "UI Experimenter"];
+const roles = ["Python Developer", "C Programming", "AIML Engineer", "Student Builder", "UI Experimenter"];
 
 const skillsTechnical = [
   { label: "Python", description: "Primary scripting and automation language for data and logic-heavy builds.", progress: 96, iconUrl: "https://cdn.simpleicons.org/python/9CA3AF" },
-  { label: "C Programming", description: "Low-level thinking, memory discipline, and fundamentals that sharpen every other layer.", progress: 78, iconUrl: "https://cdn.simpleicons.org/c/9CA3AF" },
-  { label: "Data Structures & Algorithms", description: "Problem solving with efficient patterns, complexity awareness, and clean reasoning.", progress: 84, IconComponent: Binary },
+  { label: "C Programming", description: "Low-level thinking, memory discipline, and fundamentals that sharpen every other layer.", progress: 80, iconUrl: "https://cdn.simpleicons.org/c/9CA3AF" },
   { label: "ML Frameworks", description: "PyTorch and scikit-learn workflows for experiments, evaluation, and iteration.", progress: 82, iconUrl: "https://cdn.simpleicons.org/pytorch/9CA3AF" },
-  { label: "Flask / FastAPI / Next.js", description: "Practical app delivery across APIs, web frontends, and server-rendered systems.", progress: 88, iconUrl: "https://cdn.simpleicons.org/fastapi/9CA3AF" },
+  { label: "Data Structures & Algorithms", description: "Problem solving with efficient patterns, complexity awareness, and clean reasoning.", progress: 20, IconComponent: Binary },
+  { label: "Flask / FastAPI / Next.js", description: "Practical app delivery across APIs, web frontends, and server-rendered systems.", progress: 46, iconUrl: "https://cdn.simpleicons.org/fastapi/9CA3AF" },
   { label: "Git & Open Source", description: "Versioned collaboration, branching discipline, and contribution-ready habits.", progress: 90, iconUrl: "https://cdn.simpleicons.org/git/9CA3AF" },
   { label: "Networking & IT Protocols", description: "Useful intuition for real systems, connectivity, and infrastructure behavior.", progress: 73, IconComponent: Network },
   { label: "UI/UX Design", description: "Interface thinking with hierarchy, motion, and feedback loops that feel premium.", progress: 79, IconComponent: Palette },
@@ -175,7 +175,7 @@ function Navbar({ onResumeClick, onToggleTerminal }: { onResumeClick: () => void
           </span>
           <div className="leading-tight">
             <p className="font-heading text-lg text-text">Astik Tripathi</p>
-            <p className="text-xs uppercase tracking-[0.32em] text-muted">Creative Technologist</p>
+            <p className="text-xs uppercase tracking-[0.32em] text-muted">Creative Developer</p>
           </div>
         </a>
 
@@ -255,10 +255,10 @@ function Hero() {
               <span className="animate-pulse text-accent/70">|</span>
             </div>
             <p className="max-w-2xl text-lg leading-8 text-text/85 sm:text-xl">
-              <WordReveal text="I build intelligent systems, interactive experiences, and experimental tech — one deep thought at a time." />
+              <WordReveal text="I build intelligent systems, interactive experiences, and experimental tech - one deep thought at a time." />
             </p>
             <p className="max-w-2xl text-sm leading-7 text-muted sm:text-base">
-              Student • Python Dev • AIML Explorer • Creative Technologist
+              Python • C/C++ • AI/ML  • Creative Developer
             </p>
           </div>
 
@@ -276,9 +276,9 @@ function Hero() {
 
           <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em] text-muted">
             {[
-              "Python Developer",
-              "AIML Developer",
-              "Student Builder",
+              "AI/ML Engineer",
+              "Full Stack Developer",
+              "Python ",
               "UI Enthusiast"
             ].map((pill) => (
               <span key={pill} className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-accent/90">
@@ -313,7 +313,7 @@ function About() {
     { icon: Wrench, title: "Hardware / Embedded" }
   ];
 
-  const mindset = ["Deep Thinker", "Learning-Driven", "Experimental", "Problem Solver"];
+  const mindset = ["Inquisitive", "Learning-Driven", "Experimental", "Problem Solver"];
 
   return (
     <SectionShell
@@ -330,7 +330,7 @@ function About() {
 
         <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6 }} className="space-y-8">
           <p className="text-lg leading-9 text-text/90 sm:text-xl">
-            I&apos;m Astik — a second-year CS student obsessed with building things that actually work: ML systems, embedded hardware, interactive UIs, and everything in between. I think deeply before I act, learn by doing, and love solving problems that don&apos;t have obvious answers.
+            I&apos;m Astik - a second-year CS student obsessed with building things that actually work: ML systems, embedded hardware, interactive UIs, and everything in between. I like to learn by doing and experimenting, and I love solving problems that don&apos;t have obvious answers.
           </p>
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -506,9 +506,9 @@ function Education() {
   const card = {
     label: "Current",
     institution: "Graphic Era Deemed to be University",
-    degree: "B.Tech CSE with AIML",
+    degree: "Bachelor of Technology in Computer Science & Engineering with Specialization in Artificial Intelligence & Machine Learning",
     year: "2025 - 2029",
-    highlights: ["PBL projects", "AIML coursework", "Data Mining", "C Programming"]
+    highlights: ["Projects", "AIML Projects", "Data Mining", "C Programming", "Full Stack"]
   };
 
   return (
@@ -547,6 +547,95 @@ function Education() {
   );
 }
 
+const devQuotes = [
+  { text: "Ship it broken, fix it fast, learn from both.", tag: "Mindset" },
+  { text: "The best debugger is a good night's sleep.", tag: "Wisdom" },
+  { text: "Build what excites you. Polish comes later.", tag: "Philosophy" },
+  { text: "Every side project teaches something your coursework won't.", tag: "Growth" },
+  { text: "Clean code is not written — it's rewritten.", tag: "Craft" },
+  { text: "If it scares you, it's probably worth building.", tag: "Ambition" },
+];
+
+function QuoteCarousel() {
+  const INTERVAL = 6000;
+  const [index, setIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+  const rafRef = useRef<number>(0);
+  const startRef = useRef(Date.now());
+
+  const advance = useCallback(() => {
+    setIndex((i) => (i + 1) % devQuotes.length);
+    startRef.current = Date.now();
+    setProgress(0);
+  }, []);
+
+  // Auto-cycle
+  useEffect(() => {
+    const timer = window.setInterval(advance, INTERVAL);
+    return () => window.clearInterval(timer);
+  }, [advance]);
+
+  // Progress bar animation
+  useEffect(() => {
+    const tick = () => {
+      const elapsed = Date.now() - startRef.current;
+      setProgress(Math.min(elapsed / INTERVAL, 1));
+      rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [index]);
+
+  const quote = devQuotes[index];
+
+  return (
+    <div className="glass-card rounded-3xl p-5 cursor-pointer" onClick={advance}>
+      {/* Progress bar */}
+      <div className="mb-4 flex gap-1.5">
+        {devQuotes.map((_, i) => (
+          <div key={i} className="relative h-[3px] flex-1 overflow-hidden rounded-full bg-white/10">
+            <motion.div
+              className="absolute inset-y-0 left-0 rounded-full bg-white/50"
+              initial={false}
+              animate={{
+                width: i < index ? "100%" : i === index ? `${progress * 100}%` : "0%",
+              }}
+              transition={{ duration: 0.05, ease: "linear" }}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div className="flex items-start gap-3">
+        <span className="mt-0.5 font-heading text-2xl leading-none text-white/20 select-none">"</span>
+        <div className="min-h-[4.5rem] flex-1">
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={index}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.25 }}
+              className="text-sm leading-7 text-text/90 italic"
+            >
+              {quote.text}
+            </motion.p>
+          </AnimatePresence>
+        </div>
+      </div>
+
+      <div className="mt-3 flex items-center justify-between">
+        <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.35em] text-muted">
+          {quote.tag}
+        </span>
+        <span className="text-[10px] uppercase tracking-[0.3em] text-muted/60">
+          {index + 1}/{devQuotes.length}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function Contact({ onToggleTerminal }: { onToggleTerminal: () => void }) {
   const [status, setStatus] = useState<"idle" | "sent">("idle");
   const [copied, setCopied] = useState<string | null>(null);
@@ -578,49 +667,89 @@ function Contact({ onToggleTerminal }: { onToggleTerminal: () => void }) {
   const quickActions = [
     { label: "Copy Email", value: "astik.tr@gmail.com", icon: Copy, copyKey: "Email", onClick: () => copyText("Email", "astik.tr@gmail.com") },
     { label: "Copy Phone", value: "+91 9259500529", icon: Copy, copyKey: "Phone", onClick: () => copyText("Phone", "+91 9259500529") },
-    { label: "Open Resume", value: "/assets/resume.pdf", icon: Download, copyKey: null, onClick: () => window.open("/assets/resume.pdf", "_blank", "noopener,noreferrer") }
+    { label: "Open Resume", value: "resume.pdf", icon: Download, copyKey: null, onClick: () => window.open("/assets/resume.pdf", "_blank", "noopener,noreferrer") }
   ];
 
   return (
     <div className="relative overflow-hidden py-24">
       <SectionShell id="contact" eyebrow="Reach Out" title="Let's Build Something" subtitle="Available for collaborations, projects, internships, and interesting conversations." className="relative z-10">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <motion.form
-            onSubmit={(event) => {
-              event.preventDefault();
-              setStatus("sent");
-            }}
+          <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6 }}
-            className="glass-card rounded-3xl p-6"
+            className="space-y-4"
           >
-            <div className="grid gap-4 md:grid-cols-2">
-              <label className="space-y-2 text-sm text-muted">
-                Name
-                <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-text outline-none transition focus:border-white/20 focus:ring-2 focus:ring-white/10" placeholder="Your name" />
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                setStatus("sent");
+              }}
+              className="glass-card rounded-3xl p-6"
+            >
+              <div className="grid gap-4 md:grid-cols-2">
+                <label className="space-y-2 text-sm text-muted">
+                  Name
+                  <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-text outline-none transition focus:border-white/20 focus:ring-2 focus:ring-white/10" placeholder="Your name" />
+                </label>
+                <label className="space-y-2 text-sm text-muted">
+                  Email
+                  <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-text outline-none transition focus:border-white/20 focus:ring-2 focus:ring-white/10" placeholder="your@email.com" />
+                </label>
+              </div>
+              <label className="mt-4 block space-y-2 text-sm text-muted">
+                Message
+                <textarea rows={7} className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-text outline-none transition focus:border-white/20 focus:ring-2 focus:ring-white/10" placeholder="Tell me about your project, idea, or opportunity." />
               </label>
-              <label className="space-y-2 text-sm text-muted">
-                Email
-                <input className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-text outline-none transition focus:border-white/20 focus:ring-2 focus:ring-white/10" placeholder="your@email.com" />
-              </label>
+              <div className="mt-5 flex flex-wrap items-center gap-4">
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} type="submit" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-[#050505] shadow-glow">
+                  <Send className="h-4 w-4" />
+                  Send
+                </motion.button>
+                <button onClick={onToggleTerminal} type="button" className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-text">
+                  Open Terminal
+                </button>
+                {status === "sent" ? <span className="text-sm text-accent">Message captured locally. Connect the form endpoint when ready.</span> : null}
+              </div>
+            </form>
+
+            {/* Extra info cards to fill the gap below the form */}
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="glass-card rounded-3xl p-5">
+                <div className="flex items-center gap-3">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-accent">
+                    <MapPin className="h-4 w-4" />
+                  </span>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-muted">Location</p>
+                    <p className="text-sm text-text">Dehradun, India</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex items-center gap-2">
+                  <span className="pulse-dot inline-block h-2 w-2 rounded-full bg-white/50" />
+                  <p className="text-xs text-muted">IST (UTC+5:30)</p>
+                </div>
+              </div>
+              <div className="glass-card rounded-3xl p-5">
+                <div className="flex items-center gap-3">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-accent">
+                    <Clock className="h-4 w-4" />
+                  </span>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-muted">Response</p>
+                    <p className="text-sm text-text">Within 24 hours</p>
+                  </div>
+                </div>
+                <div className="mt-4 flex items-center gap-2">
+                  <Zap className="h-3 w-3 text-accent/70" />
+                  <p className="text-xs text-muted">Usually faster on weekdays</p>
+                </div>
+              </div>
             </div>
-            <label className="mt-4 block space-y-2 text-sm text-muted">
-              Message
-              <textarea rows={7} className="w-full rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-text outline-none transition focus:border-white/20 focus:ring-2 focus:ring-white/10" placeholder="Tell me about your project, idea, or opportunity." />
-            </label>
-            <div className="mt-5 flex flex-wrap items-center gap-4">
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }} type="submit" className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-[#050505] shadow-glow">
-                <Send className="h-4 w-4" />
-                Send
-              </motion.button>
-              <button onClick={onToggleTerminal} type="button" className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-text">
-                Open Terminal
-              </button>
-              {status === "sent" ? <span className="text-sm text-accent">Message captured locally. Connect the form endpoint when ready.</span> : null}
-            </div>
-          </motion.form>
+
+            <QuoteCarousel />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 24 }}
